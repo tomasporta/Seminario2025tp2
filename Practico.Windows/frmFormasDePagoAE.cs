@@ -1,18 +1,11 @@
 ﻿using Practico.Entidades;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+using Practico.Servicios;
 
 namespace Practico.Windows
 {
     public partial class frmFormasDePagoAE : Form
     {
+        private FormaDePagoServicio? _servicio;
         private FormaDePago? formaDePago;
         public frmFormasDePagoAE()
         {
@@ -26,19 +19,33 @@ namespace Practico.Windows
         {
             this.formaDePago = formaDePago;
         }
+      
 
 
         private void BtnOK_Click(object sender, EventArgs e)
         {
             if (ValidarDatos())
             {
+                string nombre = TxtFormaDePago.Text.Trim();
+
+                if (_servicio != null)
+                {
+                    // Si es nuevo
+                    if (formaDePago == null && _servicio.Existe(formaDePago))
+                    {
+                        errorProvider1.SetError(TxtFormaDePago, "Ya existe una forma de pago con ese nombre.");
+                        return;
+                    }
+
+                    
+                  
+                }
                 if (formaDePago is null)
                 {
                     formaDePago = new FormaDePago();
-
                 }
-                formaDePago.Descripcion = TxtFormaDePago.Text;
 
+                formaDePago.Descripcion = nombre;
                 DialogResult = DialogResult.OK;
             }
         }

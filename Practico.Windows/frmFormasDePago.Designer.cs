@@ -40,7 +40,7 @@
             panel1 = new Panel();
             dgvDatos = new DataGridView();
             ColId = new DataGridViewTextBoxColumn();
-            ColFormasDePago = new DataGridViewTextBoxColumn();
+            ColDescripcion = new DataGridViewTextBoxColumn();
             toolStrip1.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvDatos).BeginInit();
@@ -54,7 +54,6 @@
             toolStrip1.Size = new Size(800, 25);
             toolStrip1.TabIndex = 0;
             toolStrip1.Text = "toolStrip1";
-            toolStrip1.ItemClicked += toolStrip1_ItemClicked;
             // 
             // TbsNuevo
             // 
@@ -64,7 +63,7 @@
             TbsNuevo.Name = "TbsNuevo";
             TbsNuevo.Size = new Size(46, 22);
             TbsNuevo.Text = "Nuevo";
-            TbsNuevo.Click += TbsNuevo_Click;
+            TbsNuevo.Click += TbsNuevo_Click_1;
             // 
             // TbsEditar
             // 
@@ -74,7 +73,7 @@
             TbsEditar.Name = "TbsEditar";
             TbsEditar.Size = new Size(41, 22);
             TbsEditar.Text = "Editar";
-            TbsEditar.Click += TbsEditar_Click;
+            TbsEditar.Click += TbsEditar_Click_1;
             // 
             // TbsBorrar
             // 
@@ -84,7 +83,7 @@
             TbsBorrar.Name = "TbsBorrar";
             TbsBorrar.Size = new Size(43, 22);
             TbsBorrar.Text = "Borrar";
-            TbsBorrar.Click += TbsBorrar_Click;
+            TbsBorrar.Click += TbsBorrar_Click_1;
             // 
             // toolStripSeparator1
             // 
@@ -99,7 +98,7 @@
             TbsActualizar.Name = "TbsActualizar";
             TbsActualizar.Size = new Size(63, 22);
             TbsActualizar.Text = "Actualizar";
-            TbsActualizar.Click += TbsActualizar_Click;
+            TbsActualizar.Click += TbsActualizar_Click_1;
             // 
             // toolStripSeparator2
             // 
@@ -130,7 +129,7 @@
             dgvDatos.AllowUserToAddRows = false;
             dgvDatos.AllowUserToDeleteRows = false;
             dgvDatos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvDatos.Columns.AddRange(new DataGridViewColumn[] { ColId, ColFormasDePago });
+            dgvDatos.Columns.AddRange(new DataGridViewColumn[] { ColId, ColDescripcion });
             dgvDatos.Dock = DockStyle.Fill;
             dgvDatos.Location = new Point(0, 0);
             dgvDatos.Name = "dgvDatos";
@@ -145,12 +144,12 @@
             ColId.ReadOnly = true;
             ColId.Visible = false;
             // 
-            // ColFormasDePago
+            // ColDescripcion
             // 
-            ColFormasDePago.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            ColFormasDePago.HeaderText = "Formas de Pago";
-            ColFormasDePago.Name = "ColFormasDePago";
-            ColFormasDePago.ReadOnly = true;
+            ColDescripcion.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            ColDescripcion.HeaderText = "Descripcion";
+            ColDescripcion.Name = "ColDescripcion";
+            ColDescripcion.ReadOnly = true;
             // 
             // frmFormasDePago
             // 
@@ -183,6 +182,6 @@
         private Panel panel1;
         private DataGridView dgvDatos;
         private DataGridViewTextBoxColumn ColId;
-        private DataGridViewTextBoxColumn ColFormasDePago;
+        private DataGridViewTextBoxColumn ColDescripcion;
     }
 }
