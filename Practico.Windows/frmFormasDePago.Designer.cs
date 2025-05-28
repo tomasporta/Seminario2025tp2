@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmFormasDePago));
             toolStrip1 = new ToolStrip();
             TbsNuevo = new ToolStripButton();
@@ -41,9 +42,11 @@
             dgvDatos = new DataGridView();
             ColId = new DataGridViewTextBoxColumn();
             ColFormasDePago = new DataGridViewTextBoxColumn();
+            errorProvider1 = new ErrorProvider(components);
             toolStrip1.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvDatos).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             SuspendLayout();
             // 
             // toolStrip1
@@ -135,6 +138,7 @@
             dgvDatos.Location = new Point(0, 0);
             dgvDatos.Name = "dgvDatos";
             dgvDatos.ReadOnly = true;
+            dgvDatos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvDatos.Size = new Size(800, 425);
             dgvDatos.TabIndex = 0;
             // 
@@ -152,6 +156,10 @@
             ColFormasDePago.Name = "ColFormasDePago";
             ColFormasDePago.ReadOnly = true;
             // 
+            // errorProvider1
+            // 
+            errorProvider1.ContainerControl = this;
+            // 
             // frmFormasDePago
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -166,6 +174,7 @@
             toolStrip1.PerformLayout();
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvDatos).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -184,5 +193,6 @@
         private DataGridView dgvDatos;
         private DataGridViewTextBoxColumn ColId;
         private DataGridViewTextBoxColumn ColFormasDePago;
+        private ErrorProvider errorProvider1;
     }
 }
